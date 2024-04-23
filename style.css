@@ -1,0 +1,63 @@
+/* Temel stil sıfırlamaları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Body için genel stiller */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+/* Oyun tahtası için stiller */
+.table {
+    display: grid;
+    grid-template-columns: repeat(3, 166px); /* 3 sütun, her biri 166 piksel genişliğinde */
+    width: 500px; /* Tahta genişliği */
+    height: 500px; /* Tahta yüksekliği */
+    border: 1px solid black; /* Kenarlık */
+}
+
+/* Kareler için stiller */
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px; /* Kare genişliği */
+    height: 166px; /* Kare yüksekliği */
+    border: 1px solid black ; /* Kare kenarlığı */
+    cursor: pointer; /* Fare işareti */
+}
+
+/* Daire işareti için stiller */
+.circle {
+    margin: 20px auto; /* Dikey hizalama */
+    width: 120px; /* Daire genişliği */
+    height: 120px; /* Daire yüksekliği */
+    border: 20px solid black; /* Daire kenarlığı */
+    border-radius: 50%; /* Dairenin kenar yarıçapı */
+}
+
+/* Çarpı işareti için stiller */
+.cross {
+    margin: 20px auto; /* Dikey hizalama */
+    width: 20px; /* Çarpı genişliği */
+    height: 120px; /* Çarpı yüksekliği */
+    background: black; /* Çarpı rengi */
+    transform: rotate(45deg); /* Dönme */
+}
+
+/* Çarpının çizgisi için stiller */
+.cross::before {
+    position: absolute; /* Mutlak pozisyon */
+    background: black; /* Çizgi rengi */
+    content: ''; /* İçerik */
+    width: 20px; /* Çizgi genişliği */
+    height: 120px; /* Çizgi yüksekliği */
+    transform: translate(0px , 0px) rotate(-90deg); /* Dönme ve konumlandırma */
+}
